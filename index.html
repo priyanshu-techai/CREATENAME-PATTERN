@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern Name</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #0B0C10; /* Void Black */
+            color: #C5C6C7; /* Starlight Silver */
+        }
+
+        /* --- Header CSS --- */
+        header {
+            background-color: #1F2833; /* Dark Steel */
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #66FCF1; /* Hyperdrive Cyan */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .header-symbol {
+            font-size: 3em;
+            color: #66FCF1;
+            line-height: 1;
+            animation: twinkle 1.5s infinite alternate;
+            background: transparent; /* Override global background */
+        }
+        @keyframes twinkle {
+            from { opacity: 0.8; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.1); }
+        }
+        h1 {
+            color: #C5C6C7;
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(102, 252, 241, 0.5);
+            background: transparent; /* Override global background */
+        }
+        
+        main {
+            background-color: #0B0C10;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #66FCF1;
+            background-color: #1F2833;
+            color: #66FCF1;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        input {
+            padding-left: 15px;
+            color: #C5C6C7;
+        }
+        input::placeholder {
+            color: rgba(197, 198, 199, 0.5);
+        }
+        button:hover {
+            background-color: #66FCF1;
+            color: #0B0C10;
+        }
+        #resetBtn{
+            border-color: #A145D1; /* Galactic Purple */
+            color: #A145D1;
+        }
+        #resetBtn:hover{
+            background-color: #A145D1;
+            color: #0B0C10;
+        }
+        .dis{
+            width: 90%;
+            border: 2px dashed #1F2833; /* Use a less harsh border color */
+            min-height: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            overflow-x: auto; /* This is key for long names on mobile */
+            border-radius: 20px;
+            background-color: #1F2833;
+            border: 2px dashed; /* Set background for the display area */
+        }
+        .dis pre {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.2;
+            color: #C5C6C7;
+            padding-top: 30px;
+            background: transparent; /* Override global background */
+        }
+
+        /* --- Responsive Styles for Mobile --- */
+        @media (max-width: 680px) {
+            /* Reduce header font sizes for smaller screens */
+            h1 {
+                font-size: 1.6em;
+                letter-spacing: 1px;
+            }
+            .header-symbol {
+                font-size: 2.2em;
+            }
+            header {
+                padding: 15px 0;
+                margin-bottom: 20px;
+                gap: 10px;
+            }
+
+            /* Adjust main container to use more screen width */
+            .dis {
+                width: 95%;
+            }
+
+            /* Make the star pattern font smaller to fit more content on screen */
+            .dis pre {
+                font-size: 1rem;
+            }
+
+            /* Improve layout for input and buttons */
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px; /* Add a little space between input and button row */
+                padding: 0 10px;
+            }
+            input {
+                width: 95%;
+            }
+
+            /* ⭐ NEW STYLE FOR BUTTON CONTAINER */
+            .button-container {
+                display: flex;
+                justify-content: center;
+                width: 95%;
+            }
+            .button-container button {
+                flex-grow: 1; /* Allow buttons to grow and fill space */
+                max-width: 150px; /* But not get too wide */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-symbol"></div>
+        <h1>STAR PATTERN GENERATOR</h1>
+    </header>
+    <main>
+        <input type="text" placeholder="Please Enter your Name">
+        
+        <div class="button-container">
+            <button>Submit</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="dis"></div>
+    </main>
+
+    <script src="Name.js"></script>
+</body>
+</html>
